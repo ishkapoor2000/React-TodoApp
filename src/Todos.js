@@ -3,14 +3,15 @@ const Todos = ({ todos, deleteTodo }) => {
         todos.map(todo => {
             return (
                 <div className="collection-item" key = { todo.id }>
-                    <span onClick={ () => {deleteTodo(todo.id)} } className="">{ todo.content }</span>
+                    <span><span onClick={ () => {deleteTodo(todo.id)} } style={{"cursor": "pointer"}} className="badge hoverable">❌</span>{ todo.content }</span>
                 </div>
             )
         })
     ) : (
-        <p className="center">You have no todos left</p>
+        <p className="center">You have no todos left! Add them below.</p>
     )
-  return (
+
+    return (
     <div className="todos collection">
         { todoList }
     </div>
